@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["S5KLDATTHD.com.quraanchallenge.app"],
+        "components": [{ "/": "/join/*" }]
+      }
+    ]
+  }
+}

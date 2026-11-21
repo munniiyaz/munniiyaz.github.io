@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دعوة إلى مصحفنا</title>
+<style>
+  :root{--bg:#F7F5EB;--ink:#1F2A24;--muted:#7C8279;--green:#1B3B2E;--card:#FFFFFF;--line:#E3DFD2}
+  @media (prefers-color-scheme:dark){:root{--bg:#141A16;--ink:#EEF0EA;--muted:#9AA39B;--green:#8AB79E;--card:#1E2621;--line:#2C362F}}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);color:var(--ink);font-family:-apple-system,"SF Arabic","Segoe UI",Tahoma,sans-serif;padding:24px 16px}
+  main{max-width:360px;width:100%;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+  img{width:84px;height:84px;border-radius:20px}
+  h1{font-size:22px;margin:4px 0 0}
+  p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+  .code{font:600 24px ui-monospace,Menlo,monospace;letter-spacing:4px;background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:10px 20px;direction:ltr}
+  a.store{display:inline-block;background:#000;color:#fff;text-decoration:none;border-radius:12px;padding:12px 22px;font-weight:600;font-size:15px}
+  .studio{margin-top:18px;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <img src="https://munniiyaz.github.io/munnistudio/mushafna/icon.png" alt="" onerror="this.remove()">
+  <h1>دعوة إلى مصحفنا</h1>
+  <p id="msg">حمّل التطبيق، ثم أدخل رمز الدعوة من «المجموعات».</p>
+  <div class="code" id="code"></div>
+  <a class="store" href="https://apps.apple.com/app/id6836324066">تنزيل من App Store</a>
+  <div class="studio">Munni Studio</div>
+</main>
+<script>
+  // Only /join/<code> is an invite; anything else goes to the studio site.
+  var m = location.pathname.match(/^\/join\/([A-Za-z0-9]{4,12})\/?$/);
+  if (!m) { location.replace('https://munniiyaz.github.io/munnistudio/'); }
+  else { document.getElementById('code').textContent = m[1].toUpperCase(); }
+</script>
+</body>
+</html>
